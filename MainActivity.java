@@ -133,7 +133,8 @@ catch(IOException e){
         return options;
     }
 
-    private void showExif(ExifInterface exif) {
+    private void showExif(ExifInterface exif) 
+    {
         String myAttribute = "파일이름: ";
 
         myAttribute += (filename.substring(filename.lastIndexOf("/")+1,filename.lastIndexOf("."))+"\n");
