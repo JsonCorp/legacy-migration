@@ -63,17 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
         File f = new File(path);
         File[] files = f.listFiles(new FileFilter() {
-
             @Override
             public boolean accept(File pathname) {
-
                 return pathname.getName().toLowerCase(Locale.US).endsWith("g");//확장자
             }
-
         });
 
-        for (int i = 0; i <files.length; i++) 
-	{
+        for (int i = 0; i <files.length; i++) {
 
             filename = String.valueOf(files[i]);
 
@@ -82,10 +78,7 @@ public class MainActivity extends AppCompatActivity {
             try {
 
                 ExifInterface[] exif = new ExifInterface[files.length];
-
-
                 exif[i] = new ExifInterface(filename);
-
                 showExif(exif[i]);
 
                 String date = formatter.format(files[i].lastModified());
@@ -101,8 +94,7 @@ public class MainActivity extends AppCompatActivity {
                             "\n날짜: "+date+"\n이미지크기: "+ size);
                 }
 
-            } 
-catch(IOException e){
+            } catch(IOException e){
                 e.printStackTrace();
                 Toast.makeText(this, "Error!", Toast.LENGTH_LONG).show();
             }
@@ -125,16 +117,14 @@ catch(IOException e){
 
     }
 
-    private BitmapFactory.Options getBitmapSize(File a) 
-    {
+    private BitmapFactory.Options getBitmapSize(File a) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(a.getAbsolutePath(), options);
         return options;
     }
 
-    private void showExif(ExifInterface exif) 
-    {
+    private void showExif(ExifInterface exif) {
         String myAttribute = "파일이름: ";
 
         myAttribute += (filename.substring(filename.lastIndexOf("/")+1,filename.lastIndexOf("."))+"\n");
