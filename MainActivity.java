@@ -72,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        for (int i = 0; i <files.length; i++) {
+        for (int i = 0; i <files.length; i++) 
+	{
 
             filename = String.valueOf(files[i]);
 
@@ -81,7 +82,10 @@ public class MainActivity extends AppCompatActivity {
             try {
 
                 ExifInterface[] exif = new ExifInterface[files.length];
+
+
                 exif[i] = new ExifInterface(filename);
+
                 showExif(exif[i]);
 
                 String date = formatter.format(files[i].lastModified());
