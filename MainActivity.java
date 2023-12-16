@@ -125,7 +125,8 @@ catch(IOException e){
 
     }
 
-    private BitmapFactory.Options getBitmapSize(File a) {
+    private BitmapFactory.Options getBitmapSize(File a) 
+    {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(a.getAbsolutePath(), options);
