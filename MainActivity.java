@@ -101,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
                             "\n날짜: "+date+"\n이미지크기: "+ size);
                 }
 
-            } catch(IOException e){
+            } 
+catch(IOException e){
                 e.printStackTrace();
                 Toast.makeText(this, "Error!", Toast.LENGTH_LONG).show();
             }
